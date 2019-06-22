@@ -1,0 +1,16 @@
+{
+  "name": "thrijith/gitblock",
+  "description": "gitblock — is a plugin for adding Github blocks.",
+  "license": "MIT",
+  "version": "1.0.0",
+  "require-dev": {
+    "wp-coding-standards/wpcs": "*",
+    "automattic/vipwpcs": "^0.3.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+    "phpcompatibility/phpcompatibility-wp": "^2.0"
+  },
+  "scripts": {
+    "phpcs": "\"./vendor/bin/phpcs\" --standard=phpcs.xml",
+    "phpcbf": "\"./vendor/bin/phpcbf\" --standard=phpcs.xml"
+  }
+}

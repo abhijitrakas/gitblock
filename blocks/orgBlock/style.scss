@@ -1,0 +1,223 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+.wp-block-gitblock-org-members {
+	max-width: 600px;
+
+	.gitcard {
+		height: 400px;
+		background-color: #fff;
+		background: linear-gradient(#f8f8f8, #fff);
+		box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+		border-radius: 6px;
+		overflow: hidden;
+		position: relative;
+
+		img {
+			border-radius: 50%;
+			border: none;
+			width: 100px;
+			height: 100px;
+			margin: 0 25px;
+			position: absolute;
+			top: 40%;
+			filter: drop-shadow(1px 1px 1px #ffffff);
+		}
+
+		.orgContainer {
+			display: flex;
+			overflow: overlay;
+			width: 475px;
+			padding: 10px;
+
+			h6 {
+				margin-bottom: 0;
+			}
+
+			a {
+				text-decoration: none;
+				padding-bottom: 30px;
+				margin-right: 10px;
+
+				img {
+					width: 50px;
+					height: 50px;
+					border-radius: 25px;
+					position: relative;
+				}
+			}
+		}
+
+		.center {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+		}
+
+		h4 {
+			text-align: center;
+		}
+
+		&:hover {
+			.additional {
+				width: 100%;
+				border-radius: 0 5px 5px 0;
+			}
+		}
+
+		.additional {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 150px;
+			height: 100%;
+			background-color: #000;
+			transition: width 0.4s;
+			overflow: hidden;
+			z-index: 2;
+
+			.coords {
+				margin: 0 1rem;
+				color: #fff;
+				font-size: 1rem;
+
+				span + span {
+					float: right;
+				}
+			}
+
+			.more-info {
+				width: 350px;
+				float: left;
+				position: absolute;
+				left: 150px;
+				height: 100%;
+
+				h4 {
+					color: #fff;
+					margin-bottom: 0;
+				}
+			}
+
+			.user-card {
+				width: 150px;
+				height: 100%;
+				position: relative;
+				float: left;
+
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 10%;
+					right: -2px;
+					height: 80%;
+					border-left: 2px solid #fff;
+				}
+
+				.login_top, .profile_link {
+					top: 15%;
+					color: #fff;
+					font-size: 0.75em;
+					font-weight: bold;
+					background: rgba(0, 0, 0, 0.15);
+					padding: 0.125rem 0.75rem;
+					border-radius: 100px;
+					white-space: nowrap;
+				}
+
+				.profile_link {
+					top: 85%;
+
+					a {
+						color: white;
+						text-decoration: none;
+					}
+
+					svg {
+						top: 50%;
+					}
+				}
+			}
+
+			.stats {
+				font-size: 2rem;
+				display: flex;
+				position: absolute;
+				bottom: 1rem;
+				left: 1rem;
+				right: 1rem;
+				top: auto;
+				color: #fff;
+
+				a.profile_links {
+					text-decoration: none;
+					color: #ffffff;
+				}
+
+				div {
+					flex: 1;
+					text-align: center;
+				}
+
+				div.title {
+					font-size: 0.75rem;
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+
+				div.value {
+					font-size: 1.5rem;
+					font-weight: bold;
+					line-height: 1.5rem;
+				}
+
+				div.value.infinity {
+					font-size: 2.5rem;
+				}
+
+				i {
+					display: block;
+				}
+			}
+		}
+
+		svg {
+			width: 30px;
+			height: 30px;
+		}
+
+		.general {
+			width: 350px;
+			height: 100%;
+			left: 150px;
+			top: 0;
+			z-index: 1;
+			box-sizing: border-box;
+			padding: 1rem;
+			padding-top: 0;
+			position: absolute;
+			bottom: 1rem;
+			right: 1rem;
+			font-size: 0.9em;
+		}
+	}
+
+	span {
+		font-size: 1rem;
+	}
+
+	p.userDescription {
+		font-size: 15px;
+	}
+}
