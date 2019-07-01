@@ -1,2 +1,329 @@
-@import url(https://fonts.googleapis.com/css?family=Abel);@import url(https://fonts.googleapis.com/css?family=Abel);.wp-block-gitblock-org-members{max-width:600px}.wp-block-gitblock-org-members .gitcard{height:400px;background-color:#fff;background:-webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#fff));background:linear-gradient(#f8f8f8, #fff);-webkit-box-shadow:0 8px 16px -8px rgba(0,0,0,0.4);box-shadow:0 8px 16px -8px rgba(0,0,0,0.4);border-radius:6px;overflow:hidden;position:relative}.wp-block-gitblock-org-members .gitcard img{border-radius:50%;border:none;width:100px;height:100px;margin:0 25px;position:absolute;top:40%;-webkit-filter:drop-shadow(1px 1px 1px #fff);filter:drop-shadow(1px 1px 1px #fff)}.wp-block-gitblock-org-members .gitcard .orgContainer{display:-webkit-box;display:-ms-flexbox;display:flex;overflow:overlay;width:475px;padding:10px}.wp-block-gitblock-org-members .gitcard .orgContainer h6{margin-bottom:0}.wp-block-gitblock-org-members .gitcard .orgContainer a{text-decoration:none;padding-bottom:30px;margin-right:10px}.wp-block-gitblock-org-members .gitcard .orgContainer a img{width:50px;height:50px;border-radius:25px;position:relative}.wp-block-gitblock-org-members .gitcard .center{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%)}.wp-block-gitblock-org-members .gitcard h4{text-align:center}.wp-block-gitblock-org-members .gitcard:hover .additional{width:100%;border-radius:0 5px 5px 0}.wp-block-gitblock-org-members .gitcard .additional{position:absolute;left:0;top:0;width:150px;height:100%;background-color:#000;-webkit-transition:width 0.4s;transition:width 0.4s;overflow:hidden;z-index:2}.wp-block-gitblock-org-members .gitcard .additional .coords{margin:0 1rem;color:#fff;font-size:1rem}.wp-block-gitblock-org-members .gitcard .additional .coords span+span{float:right}.wp-block-gitblock-org-members .gitcard .additional .more-info{width:350px;float:left;position:absolute;left:150px;height:100%}.wp-block-gitblock-org-members .gitcard .additional .more-info h4{color:#fff;margin-bottom:0}.wp-block-gitblock-org-members .gitcard .additional .user-card{width:150px;height:100%;position:relative;float:left}.wp-block-gitblock-org-members .gitcard .additional .user-card:after{content:"";display:block;position:absolute;top:10%;right:-2px;height:80%;border-left:2px solid #fff}.wp-block-gitblock-org-members .gitcard .additional .user-card .login_top,.wp-block-gitblock-org-members .gitcard .additional .user-card .profile_link{top:15%;color:#fff;font-size:0.75em;font-weight:bold;background:rgba(0,0,0,0.15);padding:0.125rem 0.75rem;border-radius:100px;white-space:nowrap}.wp-block-gitblock-org-members .gitcard .additional .user-card .profile_link{top:85%}.wp-block-gitblock-org-members .gitcard .additional .user-card .profile_link a{color:white;text-decoration:none}.wp-block-gitblock-org-members .gitcard .additional .user-card .profile_link svg{top:50%}.wp-block-gitblock-org-members .gitcard .additional .stats{font-size:2rem;display:-webkit-box;display:-ms-flexbox;display:flex;position:absolute;bottom:1rem;left:1rem;right:1rem;top:auto;color:#fff}.wp-block-gitblock-org-members .gitcard .additional .stats a.profile_links{text-decoration:none;color:#ffffff}.wp-block-gitblock-org-members .gitcard .additional .stats div{-webkit-box-flex:1;-ms-flex:1;flex:1;text-align:center}.wp-block-gitblock-org-members .gitcard .additional .stats div.title{font-size:0.75rem;font-weight:bold;text-transform:uppercase}.wp-block-gitblock-org-members .gitcard .additional .stats div.value{font-size:1.5rem;font-weight:bold;line-height:1.5rem}.wp-block-gitblock-org-members .gitcard .additional .stats div.value.infinity{font-size:2.5rem}.wp-block-gitblock-org-members .gitcard .additional .stats i{display:block}.wp-block-gitblock-org-members .gitcard svg{width:30px;height:30px}.wp-block-gitblock-org-members .gitcard .general{width:350px;height:100%;left:150px;top:0;z-index:1;-webkit-box-sizing:border-box;box-sizing:border-box;padding:1rem;padding-top:0;position:absolute;bottom:1rem;right:1rem;font-size:0.9em}.wp-block-gitblock-org-members span{font-size:1rem}.wp-block-gitblock-org-members p.userDescription{font-size:15px}
-.wp-block-gitblock-user{max-width:600px}.wp-block-gitblock-user .gitcard{height:400px;background-color:#fff;background:-webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#fff));background:linear-gradient(#f8f8f8, #fff);-webkit-box-shadow:0 8px 16px -8px rgba(0,0,0,0.4);box-shadow:0 8px 16px -8px rgba(0,0,0,0.4);border-radius:6px;overflow:hidden;position:relative}.wp-block-gitblock-user .gitcard img{border-radius:50%;border:none;width:100px;height:100px;margin:0 25px;position:absolute;top:40%;-webkit-filter:drop-shadow(1px 1px 1px #fff);filter:drop-shadow(1px 1px 1px #fff)}.wp-block-gitblock-user .gitcard .orgContainer{display:-webkit-box;display:-ms-flexbox;display:flex;overflow:overlay;width:475px;padding:10px}.wp-block-gitblock-user .gitcard .orgContainer h6{margin-bottom:0}.wp-block-gitblock-user .gitcard .orgContainer a{text-decoration:none;padding-bottom:30px;margin-right:10px}.wp-block-gitblock-user .gitcard .orgContainer a img{width:50px;height:50px;border-radius:25px;position:relative}.wp-block-gitblock-user .gitcard .center{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%)}.wp-block-gitblock-user .gitcard h4{text-align:center}.wp-block-gitblock-user .gitcard:hover .additional{width:100%;border-radius:0 5px 5px 0}.wp-block-gitblock-user .gitcard .additional{position:absolute;left:0;top:0;width:150px;height:100%;background-color:#000;-webkit-transition:width 0.4s;transition:width 0.4s;overflow:hidden;z-index:2}.wp-block-gitblock-user .gitcard .additional .coords{margin:0 1rem;color:#fff;font-size:1rem}.wp-block-gitblock-user .gitcard .additional .coords span+span{float:right}.wp-block-gitblock-user .gitcard .additional .more-info{width:350px;float:left;position:absolute;left:150px;height:100%}.wp-block-gitblock-user .gitcard .additional .more-info h4{color:#fff;margin-bottom:0}.wp-block-gitblock-user .gitcard .additional .user-card{width:150px;height:100%;position:relative;float:left}.wp-block-gitblock-user .gitcard .additional .user-card:after{content:"";display:block;position:absolute;top:10%;right:-2px;height:80%;border-left:2px solid #fff}.wp-block-gitblock-user .gitcard .additional .user-card .login_top,.wp-block-gitblock-user .gitcard .additional .user-card .profile_link{top:15%;color:#fff;font-size:0.75em;font-weight:bold;background:rgba(0,0,0,0.15);padding:0.125rem 0.75rem;border-radius:100px;white-space:nowrap}.wp-block-gitblock-user .gitcard .additional .user-card .profile_link{top:85%}.wp-block-gitblock-user .gitcard .additional .user-card .profile_link a{color:white;text-decoration:none}.wp-block-gitblock-user .gitcard .additional .user-card .profile_link svg{top:50%}.wp-block-gitblock-user .gitcard .additional .stats{font-size:2rem;display:-webkit-box;display:-ms-flexbox;display:flex;position:absolute;bottom:1rem;left:1rem;right:1rem;top:auto;color:#fff}.wp-block-gitblock-user .gitcard .additional .stats a.profile_links{text-decoration:none;color:#ffffff}.wp-block-gitblock-user .gitcard .additional .stats div{-webkit-box-flex:1;-ms-flex:1;flex:1;text-align:center}.wp-block-gitblock-user .gitcard .additional .stats div.title{font-size:0.75rem;font-weight:bold;text-transform:uppercase}.wp-block-gitblock-user .gitcard .additional .stats div.value{font-size:1.5rem;font-weight:bold;line-height:1.5rem}.wp-block-gitblock-user .gitcard .additional .stats div.value.infinity{font-size:2.5rem}.wp-block-gitblock-user .gitcard .additional .stats i{display:block}.wp-block-gitblock-user .gitcard svg{width:30px;height:30px}.wp-block-gitblock-user .gitcard .general{width:350px;height:100%;left:150px;top:0;z-index:1;-webkit-box-sizing:border-box;box-sizing:border-box;padding:1rem;padding-top:0;position:absolute;bottom:1rem;right:1rem;font-size:0.9em}.wp-block-gitblock-user span{font-size:1rem}.wp-block-gitblock-user p.userDescription{font-size:15px}
+@import url(https://fonts.googleapis.com/css?family=Abel);@import url(https://fonts.googleapis.com/css?family=Abel);/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-gitblock-org-members {
+  max-width: 600px; }
+  .wp-block-gitblock-org-members .gitcard {
+    height: 400px;
+    background-color: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#fff));
+    background: linear-gradient(#f8f8f8, #fff);
+    -webkit-box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative; }
+    .wp-block-gitblock-org-members .gitcard img {
+      border-radius: 50%;
+      border: none;
+      width: 100px;
+      height: 100px;
+      margin: 0 25px;
+      position: absolute;
+      top: 40%;
+      -webkit-filter: drop-shadow(1px 1px 1px #ffffff);
+              filter: drop-shadow(1px 1px 1px #ffffff); }
+    .wp-block-gitblock-org-members .gitcard .orgContainer {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      overflow: overlay;
+      width: 475px;
+      padding: 10px; }
+      .wp-block-gitblock-org-members .gitcard .orgContainer h6 {
+        margin-bottom: 0; }
+      .wp-block-gitblock-org-members .gitcard .orgContainer a {
+        text-decoration: none;
+        padding-bottom: 30px;
+        margin-right: 10px; }
+        .wp-block-gitblock-org-members .gitcard .orgContainer a img {
+          width: 50px;
+          height: 50px;
+          border-radius: 25px;
+          position: relative; }
+    .wp-block-gitblock-org-members .gitcard .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%); }
+    .wp-block-gitblock-org-members .gitcard h4 {
+      text-align: center; }
+    .wp-block-gitblock-org-members .gitcard:hover .additional {
+      width: 100%;
+      border-radius: 0 5px 5px 0; }
+    .wp-block-gitblock-org-members .gitcard .additional {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      background-color: #000;
+      -webkit-transition: width 0.4s;
+      transition: width 0.4s;
+      overflow: hidden;
+      z-index: 2; }
+      .wp-block-gitblock-org-members .gitcard .additional .coords {
+        margin: 0 1rem;
+        color: #fff;
+        font-size: 1rem; }
+        .wp-block-gitblock-org-members .gitcard .additional .coords span + span {
+          float: right; }
+      .wp-block-gitblock-org-members .gitcard .additional .more-info {
+        width: 350px;
+        float: left;
+        position: absolute;
+        left: 150px;
+        height: 100%; }
+        .wp-block-gitblock-org-members .gitcard .additional .more-info h4 {
+          color: #fff;
+          margin-bottom: 0; }
+      .wp-block-gitblock-org-members .gitcard .additional .user-card {
+        width: 150px;
+        height: 100%;
+        position: relative;
+        float: left; }
+        .wp-block-gitblock-org-members .gitcard .additional .user-card:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 10%;
+          right: -2px;
+          height: 80%;
+          border-left: 2px solid #fff; }
+        .wp-block-gitblock-org-members .gitcard .additional .user-card .login_top, .wp-block-gitblock-org-members .gitcard .additional .user-card .profile_link {
+          top: 15%;
+          color: #fff;
+          font-size: 0.75em;
+          font-weight: bold;
+          background: rgba(0, 0, 0, 0.15);
+          padding: 0.125rem 0.75rem;
+          border-radius: 100px;
+          white-space: nowrap; }
+        .wp-block-gitblock-org-members .gitcard .additional .user-card .profile_link {
+          top: 85%; }
+          .wp-block-gitblock-org-members .gitcard .additional .user-card .profile_link a {
+            color: white;
+            text-decoration: none; }
+          .wp-block-gitblock-org-members .gitcard .additional .user-card .profile_link svg {
+            top: 50%; }
+      .wp-block-gitblock-org-members .gitcard .additional .stats {
+        font-size: 2rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        top: auto;
+        color: #fff; }
+        .wp-block-gitblock-org-members .gitcard .additional .stats a.profile_links {
+          text-decoration: none;
+          color: #ffffff; }
+        .wp-block-gitblock-org-members .gitcard .additional .stats div {
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
+          text-align: center; }
+        .wp-block-gitblock-org-members .gitcard .additional .stats div.title {
+          font-size: 0.75rem;
+          font-weight: bold;
+          text-transform: uppercase; }
+        .wp-block-gitblock-org-members .gitcard .additional .stats div.value {
+          font-size: 1.5rem;
+          font-weight: bold;
+          line-height: 1.5rem; }
+        .wp-block-gitblock-org-members .gitcard .additional .stats div.value.infinity {
+          font-size: 2.5rem; }
+        .wp-block-gitblock-org-members .gitcard .additional .stats i {
+          display: block; }
+    .wp-block-gitblock-org-members .gitcard svg {
+      width: 30px;
+      height: 30px; }
+    .wp-block-gitblock-org-members .gitcard .general {
+      width: 350px;
+      height: 100%;
+      left: 150px;
+      top: 0;
+      z-index: 1;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 1rem;
+      padding-top: 0;
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 0.9em; }
+  .wp-block-gitblock-org-members span {
+    font-size: 1rem; }
+  .wp-block-gitblock-org-members p.userDescription {
+    font-size: 15px; }
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-gitblock-user {
+  max-width: 600px; }
+  .wp-block-gitblock-user .gitcard {
+    height: 400px;
+    background-color: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#fff));
+    background: linear-gradient(#f8f8f8, #fff);
+    -webkit-box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative; }
+    .wp-block-gitblock-user .gitcard img {
+      border-radius: 50%;
+      border: none;
+      width: 100px;
+      height: 100px;
+      margin: 0 25px;
+      position: absolute;
+      top: 40%;
+      -webkit-filter: drop-shadow(1px 1px 1px #ffffff);
+              filter: drop-shadow(1px 1px 1px #ffffff); }
+    .wp-block-gitblock-user .gitcard .orgContainer {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      overflow: overlay;
+      width: 475px;
+      padding: 10px; }
+      .wp-block-gitblock-user .gitcard .orgContainer h6 {
+        margin-bottom: 0; }
+      .wp-block-gitblock-user .gitcard .orgContainer a {
+        text-decoration: none;
+        padding-bottom: 30px;
+        margin-right: 10px; }
+        .wp-block-gitblock-user .gitcard .orgContainer a img {
+          width: 50px;
+          height: 50px;
+          border-radius: 25px;
+          position: relative; }
+    .wp-block-gitblock-user .gitcard .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%); }
+    .wp-block-gitblock-user .gitcard h4 {
+      text-align: center; }
+    .wp-block-gitblock-user .gitcard:hover .additional {
+      width: 100%;
+      border-radius: 0 5px 5px 0; }
+    .wp-block-gitblock-user .gitcard .additional {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      background-color: #000;
+      -webkit-transition: width 0.4s;
+      transition: width 0.4s;
+      overflow: hidden;
+      z-index: 2; }
+      .wp-block-gitblock-user .gitcard .additional .coords {
+        margin: 0 1rem;
+        color: #fff;
+        font-size: 1rem; }
+        .wp-block-gitblock-user .gitcard .additional .coords span + span {
+          float: right; }
+      .wp-block-gitblock-user .gitcard .additional .more-info {
+        width: 350px;
+        float: left;
+        position: absolute;
+        left: 150px;
+        height: 100%; }
+        .wp-block-gitblock-user .gitcard .additional .more-info h4 {
+          color: #fff;
+          margin-bottom: 0; }
+      .wp-block-gitblock-user .gitcard .additional .user-card {
+        width: 150px;
+        height: 100%;
+        position: relative;
+        float: left; }
+        .wp-block-gitblock-user .gitcard .additional .user-card:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 10%;
+          right: -2px;
+          height: 80%;
+          border-left: 2px solid #fff; }
+        .wp-block-gitblock-user .gitcard .additional .user-card .login_top, .wp-block-gitblock-user .gitcard .additional .user-card .profile_link {
+          top: 15%;
+          color: #fff;
+          font-size: 0.75em;
+          font-weight: bold;
+          background: rgba(0, 0, 0, 0.15);
+          padding: 0.125rem 0.75rem;
+          border-radius: 100px;
+          white-space: nowrap; }
+        .wp-block-gitblock-user .gitcard .additional .user-card .profile_link {
+          top: 85%; }
+          .wp-block-gitblock-user .gitcard .additional .user-card .profile_link a {
+            color: white;
+            text-decoration: none; }
+          .wp-block-gitblock-user .gitcard .additional .user-card .profile_link svg {
+            top: 50%; }
+      .wp-block-gitblock-user .gitcard .additional .stats {
+        font-size: 2rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        top: auto;
+        color: #fff; }
+        .wp-block-gitblock-user .gitcard .additional .stats a.profile_links {
+          text-decoration: none;
+          color: #ffffff; }
+        .wp-block-gitblock-user .gitcard .additional .stats div {
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
+          text-align: center; }
+        .wp-block-gitblock-user .gitcard .additional .stats div.title {
+          font-size: 0.75rem;
+          font-weight: bold;
+          text-transform: uppercase; }
+        .wp-block-gitblock-user .gitcard .additional .stats div.value {
+          font-size: 1.5rem;
+          font-weight: bold;
+          line-height: 1.5rem; }
+        .wp-block-gitblock-user .gitcard .additional .stats div.value.infinity {
+          font-size: 2.5rem; }
+        .wp-block-gitblock-user .gitcard .additional .stats i {
+          display: block; }
+    .wp-block-gitblock-user .gitcard svg {
+      width: 30px;
+      height: 30px; }
+    .wp-block-gitblock-user .gitcard .general {
+      width: 350px;
+      height: 100%;
+      left: 150px;
+      top: 0;
+      z-index: 1;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 1rem;
+      padding-top: 0;
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 0.9em; }
+  .wp-block-gitblock-user span {
+    font-size: 1rem; }
+  .wp-block-gitblock-user p.userDescription {
+    font-size: 15px; }
