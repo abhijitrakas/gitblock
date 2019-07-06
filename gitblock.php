@@ -34,6 +34,7 @@ add_action( 'init', 'gitblock_init', 1 );
 function gitblock_init() {
 
 	require_once plugin_dir_path( __FILE__ ) . 'blocks/init.php';
+	require_once __DIR__ . '/vendor/autoload.php';
 
 	load_plugin_textdomain(
 		'gitblock',

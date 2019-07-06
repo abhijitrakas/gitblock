@@ -12,5 +12,9 @@
   "scripts": {
     "phpcs": "\"./vendor/bin/phpcs\" --standard=phpcs.xml",
     "phpcbf": "\"./vendor/bin/phpcbf\" --standard=phpcs.xml"
+  },
+  "require": {
+    "knplabs/github-api": "^2.11",
+    "php-http/guzzle6-adapter": "^1.1"
   }
 }

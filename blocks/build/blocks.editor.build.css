@@ -1,2 +1,16 @@
-.wp-block-gitblock-org-members{max-width:600px}
-.wp-block-gitblock-user{max-width:600px}
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-gitblock-org-members {
+  max-width: 600px; }
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-gitblock-user {
+  max-width: 600px; }

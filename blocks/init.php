@@ -19,6 +19,7 @@ class gitBlock {
 		add_action( 'enqueue_block_editor_assets', array( $this, 'gitblock_editor_assets' ) );
 		add_action( 'admin_init', array( $this, 'add_github_auth_section' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( plugin_dir_path( __FILE__ ) ) . 'gitblock.php' ), array( $this, 'add_action_links' ) );
+		$this->register_dynamic_block();
 	}
 
 	/**
@@ -134,8 +135,148 @@ class gitBlock {
 
 		return array_merge( $links, $plugin_links );
 	}
+
+	/**
+	 * Function to register server siteRendering.
+	 *
+	 * @return void
+	 */
+	public function register_dynamic_block() {
+
+		/**
+		 * Register render_callback for GitHub User Block
+		 */
+		register_block_type(
+			'gitblock/user',
+			[
+				'attributes'      => [
+					'userName'     => [
+						'type' => 'string',
+					],
+					'userSelected' => [
+						'type'    => 'string',
+						'default' => null,
+					],
+				],
+				'render_callback' => [ $this, 'render_block_github_user' ],
+			]
+		);
+
+	}
+
+	/**
+	 * Function to render GitHub User block.
+	 *
+	 * @param array $attributes Attributes of block.
+	 *
+	 * @return void
+	 */
+	public function render_block_github_user( $attributes ) {
+
+		if ( empty( $attributes['userName'] ) ) {
+			return;
+		}
+
+		ob_start();
+
+		$git_api   = new \Github\Client();
+		$user      = $git_api->api( 'user' )->show( $attributes['userName'] );
+		$user_orgs = $git_api->api( 'user' )->organizations( $attributes['userName'] );
+
+		if ( empty( $user['login'] ) || empty( $user_orgs ) ) {
+			esc_html_e( 'No user data found please try again.', 'gitblock' );
+			return ob_get_clean();
+		}
+		?>
+		<div class="wp-block-gitblock-user">
+			<div class="gitcard">
+				<div class="additional">
+					<div class="user-card">
+						<div class="login_top center">
+							<?php echo esc_html( $user['login'] ); ?>
+						</div>
+						<div class="profile_link center">
+							<a href=<?php echo esc_url( $user['html_url'] ); ?> target="_blank" rel="noopener noreferrer">
+								<?php esc_html_e( 'Visit Profile', 'gitblock' ); ?>
+							</a>
+						</div>
+						<img alt="<?php esc_attr_e( 'User Avatar', 'gitblock' ); ?>" src="<?php echo esc_url( $user['avatar_url'] ); ?>" />
+					</div>
+					<div class="more-info">
+						<div class="coords">
+							<h6><?php esc_html_e( 'User Organisations', 'gitblock' ); ?></h6>
+							<div class="orgContainer" title="<?php esc_attr_e( 'Scroll to view all organisations if not visible.', 'gitblock' ); ?>">
+							<?php
+								foreach ( $user_orgs as $user_org ) {
+									?>
+									<a href="<?php echo esc_url( $user_org['repos_url'] ); ?>" target="_blank" rel="noopener noreferrer">
+										<img src="<?php echo esc_url( $user_org['avatar_url'] ); ?>" alt="<?php echo esc_attr( $user_org[ 'login' ] ); ?>" />
+									</a>
+									<?php
+								}
+							?>
+							</div>
+						</div>
+						<div class="stats">
+							<div>
+								<div class="title">
+									<?php esc_html_e( 'Repositories', 'gitblock' ); ?>
+								</div>
+								<a href='https://github.com/<?php echo esc_attr( $user['login'] ); ?>?tab=repositories' class="profile_links" target="_blank" rel="noopener noreferrer">
+									<i class="fab fa-github-alt"></i>
+									<div class="value"><?php echo esc_html( $user['public_repos'] ); ?></div>
+								</a>
+							</div>
+							<div>
+								<div class="title">
+									<?php esc_html_e( 'Followers', 'gitblock' ); ?>
+								</div>
+								<a href="https://github.com/<?php echo esc_attr( $user['login'] ); ?>?tab=followers" class="profile_links" target="_blank" rel="noopener noreferrer">
+									<i class="fas fa-users"></i>
+									<div class="value">
+										<?php echo esc_html( $user['followers'] ); ?>
+									</div>
+								</a>
+							</div>
+							<div>
+								<div class="title">
+									<?php esc_html_e( 'Following', 'gitblock' ); ?>
+								</div>
+								<a href="https://github.com/<?php echo esc_attr( $user['login'] ); ?>?tab=following" class="profile_links" target="_blank" rel="noopener noreferrer">
+									<i class="fas fa-user-friends"></i>
+									<div class="value">
+										<?php echo esc_html( $user['following'] ); ?>
+									</div>
+								</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="general">
+					<span>
+						<?php esc_html_e( 'Joined: ', 'gitblock' ); ?>
+						<?php echo esc_html( date( 'd l Y', strtotime( $user['created_at'] ) ) ); ?>
+					</span>
+					<br />
+					<span>
+						<?php esc_html_e( 'Company: ', 'gitblock' ); ?>
+						<?php echo esc_html( $user['company'] ); ?>
+					</span>
+					<br />
+					<span>
+						<?php esc_html_e( 'Bio: ', 'gitblock' ); ?>
+						<?php echo esc_html( $user['bio'] ); ?></span>
+					<br />
+					<span>
+						<?php esc_html_e( 'Location: ', 'gitblock' ); ?>
+						<?php echo esc_html( $user['location'] ); ?>
+					</span>
+				</div>
+			</div>
+		</div>
+		<?php
+
+		return ob_get_clean();
+	}
 }
-
-
-
-
