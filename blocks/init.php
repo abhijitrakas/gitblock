@@ -162,6 +162,26 @@ class gitBlock {
 			]
 		);
 
+		/**
+		 * Register render_callback for GitHub organisation Block.
+		 */
+		register_block_type(
+			'gitblock/org-members',
+			[
+				'attributes'      => [
+					'orgName'     => [
+						'type'    => 'string',
+						'default' => null,
+					],
+					'orgSelected' => [
+						'type'    => 'string',
+						'default' => null,
+					],
+				],
+				'render_callback' => [ $this, 'render_block_github_org' ],
+			]
+		);
+
 	}
 
 	/**
@@ -172,18 +192,25 @@ class gitBlock {
 	 * @return void
 	 */
 	public function render_block_github_user( $attributes ) {
-
-		if ( empty( $attributes['userName'] ) ) {
-			return;
-		}
-
 		ob_start();
 
-		$git_api   = new \Github\Client();
-		$user      = $git_api->api( 'user' )->show( $attributes['userName'] );
-		$user_orgs = $git_api->api( 'user' )->organizations( $attributes['userName'] );
+		if ( empty( $attributes['userName'] ) ) {
+			esc_html_e( 'Please provide valid GitHub username.', 'gitblock' );
+			return ob_get_clean();
+		}
 
-		if ( empty( $user['login'] ) || empty( $user_orgs ) ) {
+		try {
+
+			$git_api   = new \Github\Client();
+			$user      = $git_api->api( 'user' )->show( $attributes['userName'] );
+			$user_orgs = $git_api->api( 'user' )->organizations( $attributes['userName'] );
+
+		} catch ( Exception $e ) {
+			echo esc_html( $e->getMessage() );
+			return ob_get_clean();
+		}
+
+		if ( empty( $user['login'] ) ) {
 			esc_html_e( 'No user data found please try again.', 'gitblock' );
 			return ob_get_clean();
 		}
@@ -203,6 +230,7 @@ class gitBlock {
 						<img alt="<?php esc_attr_e( 'User Avatar', 'gitblock' ); ?>" src="<?php echo esc_url( $user['avatar_url'] ); ?>" />
 					</div>
 					<div class="more-info">
+						<?php if ( ! empty( $user_orgs ) ) { ?>
 						<div class="coords">
 							<h6><?php esc_html_e( 'User Organisations', 'gitblock' ); ?></h6>
 							<div class="orgContainer" title="<?php esc_attr_e( 'Scroll to view all organisations if not visible.', 'gitblock' ); ?>">
@@ -217,6 +245,7 @@ class gitBlock {
 							?>
 							</div>
 						</div>
+						<?php } ?>
 						<div class="stats">
 							<div>
 								<div class="title">
@@ -272,6 +301,101 @@ class gitBlock {
 						<?php esc_html_e( 'Location: ', 'gitblock' ); ?>
 						<?php echo esc_html( $user['location'] ); ?>
 					</span>
+				</div>
+			</div>
+		</div>
+		<?php
+
+		return ob_get_clean();
+	}
+
+	/**
+	 * Function to render GitHub Organisation block.
+	 *
+	 * @param array $attributes Attributes of block.
+	 *
+	 * @return void
+	 */
+	public function render_block_github_org( $attributes ) {
+		ob_start();
+
+		if ( empty( $attributes['orgName'] ) ) {
+			esc_html_e( 'No organisation data found please try again.', 'gitblock' );
+			return ob_get_clean();
+		}
+
+		try {
+			$git_api = new \Github\Client();
+			// Get organisation details.
+			$get_org = $git_api->api( 'organizations' )
+							->show( $attributes['orgName'] );
+			// Get organisation members data.
+			$org_members = $git_api->api( 'organizations' )
+							->members()
+							->setPerPage( 1000 )
+							->all( $attributes['orgName'] );
+		} catch ( Exception $e ) {
+			echo esc_html( $e->getMessage() );
+			return ob_get_clean();
+		}
+
+		if ( empty( $get_org ) ) {
+			esc_html_e( 'No organisation data found please try again.', 'gitblock' );
+			return ob_get_clean();
+		}
+
+		?>
+		<div class="wp-block-gitblock-org-members">
+			<div class="gitcard">
+				<div class="additional">
+					<div class="user-card">
+						<div class="login_top center">
+							<?php echo esc_html( $get_org['login'] ); ?>
+						</div>
+						<div class="profile_link center">
+							<a href="<?php echo esc_url( $get_org['url'] ); ?>" target="_blank" rel="noopener noreferrer">
+								<?php esc_html_e( 'Visit Profile', 'gitblock' ); ?>
+							</a>
+						</div>
+						<img alt="<?php esc_attr_e( 'Org Avatar', 'gitblock' ); ?>" src="<?php echo esc_url( $get_org['avatar_url'] ); ?>" />
+					</div>
+					<div class="more-info">
+						<h4><?php echo esc_html( $get_org['login'] ); ?></h4>
+						<div class="coords">
+							<?php if ( ! empty( $org_members ) ) { ?>
+							<h6>
+								<?php esc_html_e( 'Public Members', 'gitblock' ); ?>
+							</h6>
+							<div class="orgContainer" title="<?php esc_attr_e( 'Scroll to view all members if not visible.', 'gitblock' ); ?>">
+								<?php foreach ( $org_members as $member ) { ?>
+								<a href="<?php echo esc_url( $member['html_url'] ); ?>" target="_blank" rel="noopener noreferrer">
+									<img src="<?php echo esc_url( $member['avatar_url'] ); ?>" alt="<?php printf( esc_html__( '%s Avatar', 'gitblock' ), $member['login'] ); ?>" />
+								</a>
+								<?php } ?>
+							</div>
+							<?php } ?>
+						</div>
+						<div class="stats">
+							<div>
+								<div class="title"><?php esc_html_e( 'Repositories', 'gitblock' ); ?></div>
+								<div class="value"><?php echo esc_html( $get_org['public_repos'] ); ?></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="general">
+					<h4><?php echo esc_html( $get_org['login'] ); ?></h4>
+					<span>
+						<?php esc_html_e( 'Created on: ', 'gitblock' ); ?>
+						<?php echo esc_html( date( 'd l Y', strtotime( $get_org['created_at'] ) ) ); ?>
+					</span>
+					<?php if ( ! empty( $get_org['location'] ) ) { ?>
+					<br />
+					<span>
+						<?php esc_html_e( 'Location: ', 'gitblock' ); ?>
+						<?php echo esc_html( $get_org['location'] ); ?>
+					</span>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
